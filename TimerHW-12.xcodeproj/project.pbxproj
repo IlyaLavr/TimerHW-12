@@ -13,6 +13,7 @@
 		09E1C85A28BBA4990011C55A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09E1C85828BBA4990011C55A /* Main.storyboard */; };
 		09E1C85C28BBA4A00011C55A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09E1C85B28BBA4A00011C55A /* Assets.xcassets */; };
 		09E1C85F28BBA4A00011C55A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09E1C85D28BBA4A00011C55A /* LaunchScreen.storyboard */; };
+		3B33ED18B9BF1A48AACB3390 /* Pods_TimerHW_12.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34B96CDB7CD4454033BD29BD /* Pods_TimerHW_12.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		09E1C85B28BBA4A00011C55A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09E1C85E28BBA4A00011C55A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09E1C86028BBA4A00011C55A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34B96CDB7CD4454033BD29BD /* Pods_TimerHW_12.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimerHW_12.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42E852963CBC01262FDB2CCE /* Pods-TimerHW-12.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimerHW-12.debug.xcconfig"; path = "Target Support Files/Pods-TimerHW-12/Pods-TimerHW-12.debug.xcconfig"; sourceTree = "<group>"; };
+		DE144DE493B883BD32F48CAA /* Pods-TimerHW-12.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimerHW-12.release.xcconfig"; path = "Target Support Files/Pods-TimerHW-12/Pods-TimerHW-12.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B33ED18B9BF1A48AACB3390 /* Pods_TimerHW_12.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				09E1C85128BBA4990011C55A /* TimerHW-12 */,
 				09E1C85028BBA4990011C55A /* Products */,
+				F554E805738EE1620C122D4F /* Pods */,
+				8540A2E77A1CEC63F8A4E09F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = "TimerHW-12";
 			sourceTree = "<group>";
 		};
+		8540A2E77A1CEC63F8A4E09F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				34B96CDB7CD4454033BD29BD /* Pods_TimerHW_12.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F554E805738EE1620C122D4F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				42E852963CBC01262FDB2CCE /* Pods-TimerHW-12.debug.xcconfig */,
+				DE144DE493B883BD32F48CAA /* Pods-TimerHW-12.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09E1C86328BBA4A00011C55A /* Build configuration list for PBXNativeTarget "TimerHW-12" */;
 			buildPhases = (
+				4E4EA3117565E7262C588640 /* [CP] Check Pods Manifest.lock */,
 				09E1C84B28BBA4990011C55A /* Sources */,
 				09E1C84C28BBA4990011C55A /* Frameworks */,
 				09E1C84D28BBA4990011C55A /* Resources */,
+				16CE240C5528E330B80A5443 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		16CE240C5528E330B80A5443 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TimerHW-12/Pods-TimerHW-12-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TimerHW-12/Pods-TimerHW-12-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TimerHW-12/Pods-TimerHW-12-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E4EA3117565E7262C588640 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TimerHW-12-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		09E1C84B28BBA4990011C55A /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		09E1C86428BBA4A00011C55A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42E852963CBC01262FDB2CCE /* Pods-TimerHW-12.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +380,7 @@
 		};
 		09E1C86528BBA4A00011C55A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE144DE493B883BD32F48CAA /* Pods-TimerHW-12.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

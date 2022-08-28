@@ -5,6 +5,7 @@
 //  Created by Илья on 28.08.2022.
 //
 
+import SnapKit
 import UIKit
 
 class ViewController: UIViewController {
@@ -125,6 +126,50 @@ class ViewController: UIViewController {
             changeMode()
         }
         durationTimeMs = 0
+    }
+    
+    // MARK: - Animation
+    
+    private func animationCircular() {
+        let endAngle = (-CGFloat.pi / 2)
+        let startAngle = 2 * CGFloat.pi + endAngle
+        let circularPatch = UIBezierPath(arcCenter: self.view.center, radius: 158, startAngle: startAngle, endAngle: endAngle, clockwise: false)
+        shapeLayer.path = circularPatch.cgPath
+        shapeLayer.lineWidth = 7
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        shapeLayer.strokeEnd = 1
+        shapeLayer.lineCap = CAShapeLayerLineCap.round
+        if isWorkTime == true {
+            shapeLayer.strokeColor = CGColor.init(red: 4/255, green: 67/255, blue: 136/255, alpha: 1)
+        } else {
+            shapeLayer.strokeColor = CGColor.init(red: 233/255, green: 125/255, blue: 0/255, alpha: 1)
+        }
+        view.layer.addSublayer(shapeLayer)
+    }
+    
+    private func basicAnimation() {
+        let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        basicAnimation.toValue = 0
+        basicAnimation.duration = CFTimeInterval(durationTimer)
+        basicAnimation.fillMode = CAMediaTimingFillMode.backwards
+        basicAnimation.isRemovedOnCompletion = true
+        shapeLayer.add(basicAnimation, forKey: "basicAnimation")
+    }
+    
+    private func pauseAnimation(layer: CAShapeLayer) {
+        let pausedTime = layer.convertTime(CACurrentMediaTime(), to: nil)
+        layer.strokeEnd = pausedTime
+        layer.speed = 0.0
+        layer.timeOffset = pausedTime
+    }
+    
+    private func resumeAnimation(layer: CAShapeLayer) {
+        let pausedTime = layer.timeOffset
+        layer.speed = 1.0
+        layer.timeOffset = 0.0
+        layer.beginTime = 0.0
+        let timeSincePause = layer.convertTime(CACurrentMediaTime(), to: nil) - pausedTime
+        layer.beginTime = timeSincePause
     }
 }
 
