@@ -1,0 +1,6 @@
+framework module Pods_TimerHW_12 {
+  umbrella header "Pods-TimerHW-12-umbrella.h"
+
+  export *
+  module * { export * }
+}
