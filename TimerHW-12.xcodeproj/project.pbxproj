@@ -88,7 +88,6 @@
 				42E852963CBC01262FDB2CCE /* Pods-TimerHW-12.debug.xcconfig */,
 				DE144DE493B883BD32F48CAA /* Pods-TimerHW-12.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -357,6 +356,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SR3FZ6563L;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TimerHW-12/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -386,6 +386,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SR3FZ6563L;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TimerHW-12/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

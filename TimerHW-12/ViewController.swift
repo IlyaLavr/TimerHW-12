@@ -47,14 +47,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
         setupHierarhy()
         makeConstrains()
-        animationCircular()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.animationCircular()
+        animationCircular()
     }
     
     //MARK: - Setup
@@ -91,11 +91,10 @@ class ViewController: UIViewController {
             timer.invalidate()
             pauseAnimation(layer: shapeLayer)
         } else {
-            buttonStart.setImage(UIImage(named: "pause"), for: .normal)
-            timer.invalidate()
-            timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
-            basicAnimation()
             isStarted = true
+            timer.invalidate()
+            buttonStart.setImage(UIImage(named: "pause"), for: .normal)
+            timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
             resumeAnimation(layer: shapeLayer)
         }
     }
@@ -135,7 +134,7 @@ class ViewController: UIViewController {
         let startAngle = 2 * CGFloat.pi + endAngle
         let circularPatch = UIBezierPath(arcCenter: self.view.center, radius: 158, startAngle: startAngle, endAngle: endAngle, clockwise: false)
         shapeLayer.path = circularPatch.cgPath
-        shapeLayer.lineWidth = 7
+        shapeLayer.lineWidth = 10
         shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.strokeEnd = 1
         shapeLayer.lineCap = CAShapeLayerLineCap.round
@@ -157,8 +156,7 @@ class ViewController: UIViewController {
     }
     
     private func pauseAnimation(layer: CAShapeLayer) {
-        let pausedTime = layer.convertTime(CACurrentMediaTime(), to: nil)
-        layer.strokeEnd = pausedTime
+        let pausedTime: CFTimeInterval = layer.convertTime(CACurrentMediaTime(), from: nil)
         layer.speed = 0.0
         layer.timeOffset = pausedTime
     }
@@ -168,8 +166,12 @@ class ViewController: UIViewController {
         layer.speed = 1.0
         layer.timeOffset = 0.0
         layer.beginTime = 0.0
-        let timeSincePause = layer.convertTime(CACurrentMediaTime(), to: nil) - pausedTime
+        let timeSincePause = layer.convertTime(CACurrentMediaTime(), from: nil) - pausedTime
         layer.beginTime = timeSincePause
     }
+    
+    private func setupView() {
+        basicAnimation()
+        pauseAnimation(layer: shapeLayer)
+    }
 }
-
